@@ -1,0 +1,14 @@
+---
+  - name: Install, Start and Enable Nginx
+    hosts: 10.116.0.3
+    tasks:
+      - name: Nginx
+        yum:
+          name: nginx
+          state: latest
+
+      - name: Start Enable        
+        systemd:
+          name: nginx
+          state: started
+          enabled: yes  
